@@ -1,0 +1,10 @@
+<h1>注文履歴</h1>
+
+<% @orders.each do |order| %>
+    <div>
+        <h3>注文: <%= order.id %></h3>
+        <p>ステータス: <%= order.status %></p>
+        <p>合計金額: <%= order.total_price %> 円</p>
+        <%= link_to '詳細', order_path(order) %>
+    </div>
+<% end %>

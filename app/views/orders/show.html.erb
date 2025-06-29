@@ -1,0 +1,16 @@
+<h1>注文履歴</h1>
+
+<p>注文番号: <%= @order.id %></p>
+<p>ステータス: <%= @order.status %></p>
+<p>合計金額: <%= @order.total_price %> 円</p>
+
+<h2>商品一覧</h2>
+<ul>
+    <% @order.order_items.each do |item| %>
+        <li>
+            <%= item.product.name %> -
+            数量: <%= item.quantity %> -
+            価格: <%= item.price %> 円
+        </li>
+    <% end %>
+</ul>
